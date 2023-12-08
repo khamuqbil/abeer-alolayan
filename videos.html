@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Abeer Alolayan</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="css/templatemo-style.css">
+<!--
+
+TemplateMo 556 Catalog-Z
+
+https://templatemo.com/tm-556-catalog-z
+
+-->
+</head>
+<body>
+    <!-- Page Loader -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+
+    </div>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+              <img class="logo" alt="Abeer Alolayan" src="img/Abeer.svg">
+                <i class=""></i>
+                Abeer Alolayan
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link nav-link-1" href="index.html">الصور</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid tm-container-content tm-mt-60">
+        <div class="row mb-4">
+          <h2 class="col-6 tm-text-primary">
+            الدرس التطبيقي لمادة اللغة الإنجليزية
+          </h2>
+            <div class="col-6 d-flex justify-content-end align-items-center">
+            </div>
+            <hr class="bg-info border-2 border-top border-info" />
+        </div>
+        <div class="tm-hero d-flex justify-content-center align-items-center" id="tm-video-container">
+            <video autoplay muted loop id="tm-video" style="width: 711.111px; /*! height: 400px; */ margin-left: -141.556px; margin-top: 0px;">
+                <source src="video/vid01.mp4" type="video/mp4">
+            </video>
+            <i id="tm-video-control-button" class="fas fa-pause"></i>
+        </div>
+        <div class="tm-hero d-flex justify-content-center align-items-center" id="tm-video-container">
+            <video autoplay muted loop id="tm-video">
+                <source src="video/vid02.mp4" type="video/mp4">
+            </video>
+            <i id="tm-video-control-button" class="fas fa-pause"></i>
+        </div>
+        <div class="tm-hero d-flex justify-content-center align-items-center" id="tm-video-container">
+            <video autoplay muted loop id="tm-video">
+                <source src="video/vid03.mp4" type="video/mp4">
+            </video>
+            <i id="tm-video-control-button" class="fas fa-pause"></i>
+        </div>
+        <div class="tm-hero d-flex justify-content-center align-items-center" id="tm-video-container">
+            <video autoplay muted loop id="tm-video">
+                <source src="video/vid04.mp4" type="video/mp4">
+            </video>
+            <i id="tm-video-control-button" class="fas fa-pause"></i>
+        </div>
+        <div class="row tm-mb-90">
+            <div class="col-12 d-flex justify-content-between align-items-center tm-paging-col">
+                <a href="javascript:void(0);" class=""></a>
+                <div class="tm-paging d-flex">
+                    <a href="javascript:void(0);" class=""></a>
+                    <a href="javascript:void(0);" class=""></a>
+                    <a href="javascript:void(0);" class=""></a>
+                    <a href="javascript:void(0);" class=""></a>
+                </div>
+                <a href="javascript:void(0);" class=""></a>
+            </div>
+        </div>
+    </div> <!-- container-fluid, tm-container-content -->
+
+
+    <footer class="tm-bg-gray pt-5 pb-3 tm-text-gray tm-footer">
+        <div class="container-fluid tm-container-small">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-12 px-5 mb-5">
+                    <h3 class="tm-text-primary mb-4 tm-footer-title">Abeer Alolayan</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-md-7 col-12 px-5 mb-3">
+                    Copyright 2023 Abeer Alolayan. All rights reserved.
+                </div>
+                <div class="col-lg-4 col-md-5 col-12 px-5 text-right">
+                    Designed by <a href="https://templatemo.com" class="tm-text-gray" rel="sponsored" target="_parent">Khalid Almuqbil</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/plugins.js"></script>
+    <script>
+        $(window).on("load", function() {
+            $('body').addClass('loaded');
+        });
+
+        $(function(){
+            /************** Video background *********/
+
+            function setVideoSize() {
+                const vidWidth = 1280;
+                const vidHeight = 720;
+                const maxVidHeight = 400;
+                let windowWidth = window.innerWidth;
+                let newVidWidth = windowWidth;
+                let newVidHeight = windowWidth * vidHeight / vidWidth;
+                let marginLeft = 0;
+                let marginTop = 0;
+
+                if (newVidHeight < maxVidHeight) {
+                    newVidHeight = maxVidHeight;
+                    newVidWidth = newVidHeight * vidWidth / vidHeight;
+                }
+
+                if(newVidWidth > windowWidth) {
+                    marginLeft = -((newVidWidth - windowWidth) / 2);
+                }
+
+                if(newVidHeight > maxVidHeight) {
+                    marginTop = -((newVidHeight - $('#tm-video-container').height()) / 2);
+                }
+
+                const tmVideo = $('#tm-video');
+
+                tmVideo.css('width', newVidWidth);
+                tmVideo.css('height', newVidHeight);
+                tmVideo.css('margin-left', marginLeft);
+                tmVideo.css('margin-top', marginTop);
+            }
+
+            setVideoSize();
+
+            // Set video background size based on window size
+            let timeout;
+            window.onresize = function () {
+                clearTimeout(timeout);
+                timeout = setTimeout(setVideoSize, 100);
+            };
+
+            // Play/Pause button for video background
+            const btn = $("#tm-video-control-button");
+
+            btn.on("click", function (e) {
+                const video = document.getElementById("tm-video");
+                $(this).removeClass();
+
+                if (video.paused) {
+                    video.play();
+                    $(this).addClass("fas fa-pause");
+                } else {
+                    video.pause();
+                    $(this).addClass("fas fa-play");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
